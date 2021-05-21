@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script type="text/javascript" src="libs/vue.js"></script>
+        <script type="text/javascript" src="libs/axios.js"></script>
+    </head>
+    <body>
+    <a href="index.html"><b>Prima pagina</b></a>
+        <div id="update"><br>
+            <b>Actualizare rama cu id-ul: {{ id }}</b> <br><br>
+            <b>Nume:</b> <input type="text" v-model="rama.Nume">
+            <b>Dimensiuni:</b> <input type="text" v-model="rama.Dimensiuni">
+            <b>Culoare:</b> <input type="text" v-model="rama.Culoare">
+            <b>Forma:</b> <input type="text" v-model="rama.Forma">
+            <b>Producator:</b> <input type="text" v-model="rama.Producator">
+            <b>Material:</b> <input type="text" v-model="rama.Material"><br><br>
+            <b>Pret:</b> <input type="text" v-model="rama.Pret">
+            <button  v-on:click="update(rama.id)"><b>Salveaza actualizarile</b></button>
+
+            <p>{{message}}</p>
+
+        </div>
+
+        <script src="src/update.js"></script>
+    </body>
+</html>

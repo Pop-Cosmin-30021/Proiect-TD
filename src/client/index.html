@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <meta content="utf-8" http-equiv="encoding" />
+  <title>Magazin rame foto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/vue-material.css" />
+  <script type="text/javascript" src="libs/vue.js"></script>
+  <script type="text/javascript" src="libs/vue-material.js"></script>
+  <script type="text/javascript" src="libs/axios.js"></script>
+  <script type="text/javascript" src="src/rame-service.js"></script>
+</head>
+
+<body>
+  <div id="app">
+
+    <div class="title"><i>~Magazin rame foto~</i></div>
+    <div class="addButton">
+      <a :href="'add.html?'"><b>Adauga Rama</b></a>
+    </div>
+    <p style="text-align: center" v-if="rame.length == 0"><b>Nu s-au gasit rame foto!</b></p>
+
+    <ul class="user-list" v-if="rame.length > 0">
+
+      <li v-for="rama in rame">
+        <div class="">
+          <a :href="'details.html?id='+rama.id"><b>Nume: </b>{{ rama.Nume }}</a>
+          <span class=""><i><b> Dimensiuni: </b>{{ rama.Dimensiuni }}</i></span>
+          <span class=""><i><b>Culoare: </b> {{ rama.Culoare }}</i></span>
+          <span class=""><i><b>Forma: </b>{{ rama.Forma }}</i></span>
+          <span class=""><i><b>Producator: </b>{{ rama.Producator }}</i></span>
+          <span class=""><i><b>Material: </b>{{ rama.Material }}</i></span>
+          <span class=""><i><b>Pret: </b>{{ rama.Pret }}</i></span>
+          <button v-on:click="deleteRama(rama.id)">Delete</button>
+          <a :href="'update.html?id='+rama.id" target="_self"><b>Actualizeaza</b></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script src="src/app.js"></script>
+</body>
+
+</html>

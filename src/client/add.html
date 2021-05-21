@@ -1,0 +1,26 @@
+<html>
+<head>
+    <script type="text/javascript" src="libs/vue.js"></script>
+    <script type="text/javascript" src="libs/axios.js"></script>
+</head>
+<body>
+
+<a href="index.html">Prima pagina</a><br><br>
+<div id="add">
+
+    Nume: <input type="text" v-model="rama.Nume">
+    Dimensiuni: <input type="text" v-model="rama.Dimensiuni">
+    Culoare: <input type="text" v-model="rama.Culoare">
+    Forma: <input type="text" v-model="rama.Forma">
+    Producator: <input type="text" v-model="rama.Producator">
+    Material: <input type="text" v-model="rama.Material"><br><br>
+    Pret: <input type="text" v-model="rama.Pret">
+    <button  v-on:click="add(rama)">Salveaza modificarea</button>
+
+    <p>{{message}}</p>
+
+</div>
+
+<script src="src/add.js"></script>
+</body>
+</html>
